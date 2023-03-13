@@ -33,8 +33,8 @@ body{
     cursor : default;
     text-align: center;
     padding : 7px 7px;
-    width : 40px;
-    height : 40px;
+    width : 35px;
+    height : 35px;
     margin : 3px 3px;
     font-size: 20px;
     text-shadow: 0 -1px 1px #000;
@@ -43,13 +43,8 @@ body{
     border-radius: 6px;
     border:1px solid rgb(125, 125, 125);
 }
-.large{
-    width : 90px;
-}
-.finish{
-    background-color: rgb(107, 195, 80);
-    
-}
+
+
 #resultat{
     font-size: 19px;
     padding : 10px 10px;
@@ -73,6 +68,34 @@ body{
 }
 #padOP{
     grid-column : 2/3;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.parenthesis{
+    grid-rows : 1/2;
+
+    display: grid;
+    grid-template-column: 1fr 1fr;
+    justify-items: center;
+}
+.parenthesis.left{
+    grid-column : 1/2;
+}
+.parenthesis.right{
+    grid-column : 2/3;
+}
+.AC{
+    grid-row : 2/3;
+}
+.C{
+    grid-row : 3/4;
+}
+.finish{
+    background-color: rgb(107, 195, 80);
+    grid-rows: 4/5;
+}
+.large{
+    width : 90px;
 }
 
 

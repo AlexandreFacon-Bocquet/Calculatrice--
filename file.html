@@ -37,10 +37,12 @@
                 <button class="btn" onclick="ajouter('+')" >+</button>
             </div>
             <div id="padOP">
-                <button class="btn" onclick="ajouter('(')" >(</button>
-                <button class="btn" onclick="ajouter(')')" >)</button>
-                <button class="btn large"onclick="ajouter('')" >C</button>
-                <button class="btn large"onclick="retire()" >AC</button>
+                <div class="parennthesis">
+                    <button class="btn left" onclick="ajouter('(')" >(</button>
+                    <button class="btn right" onclick="ajouter(')')" >)</button>
+                </div>
+                <button class="btn large C"onclick="ajouter('')" >C</button>
+                <button class="btn large AC"onclick="retire()" >AC</button>
                 <button class="btn large finish"onclick="equality()" >=</button>
             </div>
             
