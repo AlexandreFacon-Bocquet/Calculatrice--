@@ -1,51 +1,62 @@
-//ajouter un élément au champ de saisie
-function ajouter(valeur) {
-    if(valeur === ''){
-        champ.value = '';
-    } 
-    else{
-        champ.value += valeur;
-        
+class Calculatrice{
+    constructor(answer) {
+        this.answer = answer;
+        this.tab = []
     }
-}
-//fonction pour transformer les caractères spéciaux en caractères utilisables par eval
-function changeOp(word){
-    let newWord = '';
-    for(let item of word){
-        switch(item){
-            case '×':
-                newWord+='*';
-                break;
-            case '÷':
-                newWord+="/";
-                break;
-            case '≡':
-                newWord+="%";
-                break;
-            default:
-                newWord += item;
-                break;
+
+    //ajouter un élément au champ de saisie
+    ajouter(valeur) {
+        if(valeur === ''){
+            this.answer.value = '';
+        } 
+        else{
+            this.answer.value += valeur;
+            this.tab.push(this.answer.value);
         }
     }
-    return newWord;
-}
-//fonction pour le bouton = qui calcul et affiche le resultat
-function equality(){
-    let trad = changeOp(champ.value);
-    console.log(champ.value+"=>"+trad);
-    
+    //fonction pour transformer les caractères spéciaux en caractères utilisables par eval
+    changeOp(word){
+        let newWord = '';
+        for(let item of word){
+            switch(item){
+                case '×':
+                    newWord += '*';
+                    break;
+                case '÷':
+                    newWord += "/";
+                    break;
+                case '≡':
+                    newWord += "%";
+                    break;
+                default:
+                    newWord += item;
+                    break;
+            }
+        }
+        return newWord;
+    }
+    //fonction pour le bouton = qui calcul et affiche le resultat
+    equality(){
+        let trad = this.changeOp(this.answer.value);
+        let response = eval(trad);
+        console.log(response);
+        document.getElementById("res").innerText += "\n"+ this.answer.value+" = "+response;
+        this.tab.push(document.getElementById("res").innerText);
+        this.answer.value = '';
+    }
 
-    //let result2 = champ.value;
-    let response = eval(trad);
-    console.log(response);
-    //let result = document.createTextNode(champ.value);
-    //document.getElementById("op").innerHTML = eval(result2);
-    //champ.value = result;
-    document.getElementById("res").innerText = champ.value+" = "+response;
-    champ.value = '';
+    retire(){
+        this.tab.pop();
+        if(this.tab.length != 0){
+            this.answer.value = this.tab[this.tab.length - 1];
+        }
+        else{
+            this.answer.value = '';
+        }
+        
+    }
+
 }
 
-function retire(){
-    let res = champ.value;
-    champ.value = res.substring(0, res.length - 1);
-}
+
+let calc = new Calculatrice(document.getElementById("champ"));

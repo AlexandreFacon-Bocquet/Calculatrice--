@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculatrice ++</title>
-    <script src="calcul.js"></script>
+    
     <link rel="stylesheet" href="file.css"/>
 </head>
 <body>
@@ -19,34 +19,35 @@
         
         <div id="pad">
             <div id="padNB">
-                <button class="btn" onclick="ajouter('7')" >7</button>
-                <button class="btn" onclick="ajouter('8')" >8</button>
-                <button class="btn" onclick="ajouter('9')" >9</button>
-                <button class="btn" onclick="ajouter('÷')" >÷</button>
-                <button class="btn" onclick="ajouter('4')" >4</button>
-                <button class="btn" onclick="ajouter('5')" >5</button>
-                <button class="btn" onclick="ajouter('6')" >6</button>
-                <button class="btn" onclick="ajouter('×')" >×</button>
-                <button class="btn" onclick="ajouter('1')" >1</button>
-                <button class="btn" onclick="ajouter('2')" >2</button>
-                <button class="btn" onclick="ajouter('3')" >3</button>
-                <button class="btn" onclick="ajouter('-')" >-</button>
-                <button class="btn" onclick="ajouter('0')" >0</button>
-                <button class="btn" onclick="ajouter('.')" >.</button>
-                <button class="btn" onclick="ajouter('≡')" >≡[]</button>
-                <button class="btn" onclick="ajouter('+')" >+</button>
+                <button class="btn" onclick="calc.ajouter('7')" >7</button>
+                <button class="btn" onclick="calc.ajouter('8')" >8</button>
+                <button class="btn" onclick="calc.ajouter('9')" >9</button>
+                <button class="btn" onclick="calc.ajouter('÷')" >÷</button>
+                <button class="btn" onclick="calc.ajouter('4')" >4</button>
+                <button class="btn" onclick="calc.ajouter('5')" >5</button>
+                <button class="btn" onclick="calc.ajouter('6')" >6</button>
+                <button class="btn" onclick="calc.ajouter('×')" >×</button>
+                <button class="btn" onclick="calc.ajouter('1')" >1</button>
+                <button class="btn" onclick="calc.ajouter('2')" >2</button>
+                <button class="btn" onclick="calc.ajouter('3')" >3</button>
+                <button class="btn" onclick="calc.ajouter('-')" >-</button>
+                <button class="btn" onclick="calc.ajouter('0')" >0</button>
+                <button class="btn" onclick="calc.ajouter('.')" >.</button>
+                <button class="btn" onclick="calc.ajouter('≡')" >≡[]</button>
+                <button class="btn" onclick="calc.ajouter('+')" >+</button>
             </div>
             <div id="padOP">
                 <div class="parennthesis">
-                    <button class="btn left" onclick="ajouter('(')" >(</button>
-                    <button class="btn right" onclick="ajouter(')')" >)</button>
+                    <button class="btn left" onclick="calc.ajouter('(')" >(</button>
+                    <button class="btn right" onclick="calc.ajouter(')')" >)</button>
                 </div>
-                <button class="btn large C"onclick="ajouter('')" >C</button>
-                <button class="btn large AC"onclick="retire()" >AC</button>
-                <button class="btn large finish"onclick="equality()" >=</button>
+                <button class="btn large C"onclick="calc.ajouter('')" >C</button>
+                <button class="btn large AC"onclick="calc.retire()" >AC</button>
+                <button class="btn large finish"onclick="calc.equality()" >=</button>
             </div>
             
         </div>
     </div>
+    <script src="calcul.js"></script>
 </body>
 </html>
